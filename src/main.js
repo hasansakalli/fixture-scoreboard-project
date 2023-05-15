@@ -9,7 +9,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { initializeApp } from "firebase/app";
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://fixture-register-default-rtdb.europe-west1.firebasedatabase.app";
+axios.defaults.baseURL = ;
 
 const firebaseConfig = {
   apiKey: ,
