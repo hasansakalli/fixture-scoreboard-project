@@ -13,8 +13,8 @@
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/userpage" v-if="isLoggedIn"
-            >My Fixtures <span></span></router-link
-          >
+            >My Fixtures <span></span
+          ></router-link>
         </li>
         <li class="nav-item">
           <router-link
@@ -42,7 +42,8 @@
           >
         </li>
         <li class="nav-item p-2 text-light">
-          <span><i v-if="isLoggedIn" class="fa-solid fa-user"></i></span> {{ userMail }}
+          <span><i v-if="isLoggedIn" class="fa-solid fa-user"></i></span>
+          {{ userMail }}
         </li>
       </ul>
     </nav>
@@ -77,7 +78,7 @@ export default {
       if (user) {
         this.loginId = user.uid;
         this.isLoggedIn = true;
-       
+
         this.userMail = user?.email;
         this.isLogin = !this.isLogin;
         this.isRegister = !this.isRegister;
@@ -100,16 +101,11 @@ export default {
       signOut(this.auth).then(() => {
         this.router.push("/register");
       });
-      localStorage.removeItem('user')
+      localStorage.removeItem("user");
     },
   },
 };
 </script>
-
-
-
-
-
 
 <style scoped>
 * {
@@ -118,25 +114,23 @@ export default {
   box-sizing: border-box;
   font-size: clamp(0.625rem, 0.4844rem + 0.75vw, 1rem);
 }
-nav{
-  width:100vw
+nav {
+  width: 100vw;
 }
 
 body {
- 
   background-color: #b3b4b6;
   font-family: "poppins", sans-serif;
   color: white;
   font-size: clamp(0.625rem, 0.2344rem + 1.25vw, 0.9375rem);
 }
-h1{
+h1 {
   font-size: 25px !important;
 }
-.wrapper{
-  display:grid;
+.wrapper {
+  display: grid;
   place-items: center;
   max-width: 100vw;
- 
 }
 .navClass {
   display: flex;
@@ -161,9 +155,9 @@ h1{
   padding: 1.3rem 1.3rem;
 }
 
-.navbar-brand{
+.navbar-brand {
   width: 200px;
-  padding-left:1rem ;
+  padding-left: 1rem;
 }
 nav a {
   color: #b3b4b6;
@@ -208,14 +202,11 @@ nav .myIcon {
 }
 
 @media (max-width: 800px) {
-
- .navbar-brand{
-  width: 100%;
-  
-}
+  .navbar-brand {
+    width: 100%;
+  }
 
   .navbar {
-   
     padding: 1.6rem;
   }
   .navClass {
@@ -225,7 +216,6 @@ nav .myIcon {
     padding: 15px;
     width: 100%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      
   }
   .toggleClass {
     position: fixed;
@@ -238,11 +228,9 @@ nav .myIcon {
     transition: 0.6s;
     background-color: #0b3079ec;
     z-index: 999;
-    
   }
   .menu {
     display: flex;
-  
   }
 
   .toggleClass.active {
@@ -251,16 +239,15 @@ nav .myIcon {
 
   nav .myIcon {
     display: flex;
-    width:100px
+    width: 100px;
   }
 
   .fa-bars:hover {
     color: #fffffff5;
     cursor: pointer;
     transition: all 150ms;
-    
   }
-  .nav-link{
+  .nav-link {
     font-size: 15px;
   }
 }

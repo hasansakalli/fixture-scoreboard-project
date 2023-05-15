@@ -1,30 +1,28 @@
 <template>
-<div class="container ">
-  <div class="input-group mb-3 w-100">
-    <input
-      type="text"
-      v-model="fixtureName"
-      class="form-control"
-      placeholder="Please enter Fixture name"
-      aria-label="Recipient's username"
-      aria-describedby="basic-addon2"
-      maxlength="15"
-    />
+  <div class="container">
+    <div class="input-group mb-3 w-100">
+      <input
+        type="text"
+        v-model="fixtureName"
+        class="form-control"
+        placeholder="Please enter Fixture name"
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+        maxlength="15"
+      />
+    </div>
+    <fixture-select :isDisabled="isDisabled" ref="child"></fixture-select>
+    <div class="btn-group w-100">
+      <button
+        @click="saveTeams()"
+        type="button"
+        disabled
+        class="form-control btn btn-success"
+      >
+        Create Fixture
+      </button>
+    </div>
   </div>
-  <fixture-select :isDisabled="isDisabled" ref="child"></fixture-select>
-  <div class="btn-group w-100">
-   
-    <button
-      @click="saveTeams()"
-      type="button"
-      disabled
-      class="form-control btn btn-success"
-    >
-      Create Fixture
-    </button>
-  </div>
-  </div>
-
 
   <fixture-scorboard
     v-show="isButton"
@@ -34,8 +32,6 @@
     ref="child2"
   ></fixture-scorboard>
 </template>
-
-
 
 <script>
 import FixtureSelect from "../components/FixtureSelect.vue";
@@ -82,8 +78,7 @@ export default {
 
       for (let i = 0; i < teamNames.length; i++) {
         let teamValue = teamNames[i].value;
-        
-       
+
         this.selectedTeams.push(teamValue);
 
         teamNames[i].setAttribute("disabled", " ");
@@ -96,8 +91,6 @@ export default {
       }
 
       this.setMatches();
-   
-      
     },
     hideShowTeams() {
       const teamNames = document.querySelector(".team");
@@ -165,7 +158,6 @@ export default {
 };
 </script>
 
-
 <style>
 * {
   margin: 0;
@@ -174,32 +166,23 @@ export default {
   font-size: clamp(0.625rem, 0.4844rem + 0.75vw, 1rem);
 }
 
-
 .container {
   display: grid;
   place-content: center;
   font-family: "poppins", sans-serif;
   margin: auto;
   box-sizing: border-box;
-width: 100%;
-
- 
- 
+  width: 100%;
 }
-
 
 .team input {
   padding: 10px;
   border: 1px solid #ccc;
-  
 }
 
-
-
-
-button, select {
+button,
+select {
   width: 100%;
-
 }
 .mystyle {
   display: none;
@@ -283,7 +266,6 @@ button, select {
 
 /* Table styles */
 
-
 /* Score input styles */
 .score,
 .score::placeholder {
@@ -342,8 +324,4 @@ button, select {
   margin-bottom: 20px;
   margin-top: 20px;
 }
-
-
 </style>
-
-
