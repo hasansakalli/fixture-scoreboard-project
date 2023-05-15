@@ -9,16 +9,16 @@ import { getAuth, onAuthStateChanged } from "firebase/auth"
 import { initializeApp } from "firebase/app";
 import axios from 'axios';
 
-axios.defaults.baseURL = "https://fixture-register-default-rtdb.europe-west1.firebasedatabase.app";
+axios.defaults.baseURL =;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAZjX9O3cKVsIfvjIML8Jiy8FhnFyf_1dQ",
-  authDomain: "fixture-register.firebaseapp.com",
-  databaseURL: "https://fixture-register-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "fixture-register",
-  storageBucket: "fixture-register.appspot.com",
-  messagingSenderId: "229293818467",
-  appId: "1:229293818467:web:62e69e712724ca66a42e56"
+  apiKey: ,
+  authDomain: ,
+  databaseURL: ,
+  projectId: ,
+  storageBucket: ,
+  messagingSenderId: ,
+  appId: 
 };
 
 initializeApp(firebaseConfig)
